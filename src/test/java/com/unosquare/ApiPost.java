@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-//import org.testng.Assert;
+import org.testng.Assert;
 import org.testng.Reporter;
 
 import io.restassured.RestAssured;
@@ -28,7 +28,7 @@ public class ApiPost {
 		    httpRequest.headers("Content-Type", "application/json");
 		    httpRequest.body(jsonObject.toString());
 		    Response response = httpRequest.post(URL);
-		 //   Assert.assertEquals(statusCode, response.getStatusCode());
+		    Assert.assertEquals(statusCode, response.getStatusCode());
 		    
 		    Reporter.log("Type of post: " + typePost);
 		    Reporter.log("Status for Post: " + response.getStatusCode());  
@@ -43,7 +43,7 @@ public class ApiPost {
 		RequestSpecification httpRequest = RestAssured.given();
 		Response response = httpRequest.get(URL);
 		
-	//	Assert.assertEquals(statusCode,response.getStatusCode());
+		Assert.assertEquals(statusCode,response.getStatusCode());
 		Reporter.log("Type of post: " + typePost);
 		Reporter.log("Status for Post: " + response.getStatusCode());  
 		Reporter.log("Body for Post: " + response.asString());
@@ -62,7 +62,7 @@ public class ApiPost {
 	    httpRequest.headers("Content-Type", "application/json");
 	    httpRequest.body(jsonObject.toString());
 	    Response response = httpRequest.put(URL);
-	  //  Assert.assertEquals(statusCode, response.getStatusCode());
+	    Assert.assertEquals(statusCode, response.getStatusCode());
 	    
 	    Reporter.log("Type of post: " + typePost);
 	    Reporter.log("Status for Post: " + response.getStatusCode());  
